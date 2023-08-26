@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+  title: Restaurants CRUD API
+  version: 1.0.0
+  description: API for managing restaurants
+
+paths:
+
+  /restaurants/{id}:
+    get:
+      summary: Retrieve a restaurant by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurant'
+        '404':
+          description: Not Found
+
+components:
+  schemas:
+    Restaurant:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        avg_rating:
+          type: string
+        has_vegan_options:
+          type: boolean
