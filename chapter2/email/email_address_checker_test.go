@@ -22,9 +22,7 @@ func TestIsLinkedInEmployeeTable(t *testing.T) {
 	}
 
 	for _, testCase := range testCases {
-		testCase := testCase
 		t.Run(testCase.inputEmail, func(t *testing.T) {
-			t.Parallel()
 			actualOutput := IsLinkedInEmployee(testCase.inputEmail)
 			if actualOutput != testCase.expectedOutput {
 				t.Errorf("expected IsLinkedInEployee('%s') to be %t but got %t", testCase.inputEmail, testCase.expectedOutput, actualOutput)
